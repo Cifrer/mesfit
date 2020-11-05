@@ -1,0 +1,16 @@
+{
+  "name": "mf/mesfit-php",
+  "description": "",
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    },
+    "files": [
+      "src/Config.php"
+    ]
+  },
+  "require": {
+    "php": ">=5.3.3",
+    "coffeecode/router": "^1.0"
+  }
+}

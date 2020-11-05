@@ -113,7 +113,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 .menuBtns ul {
 	display: grid;
 	justify-content: center;
-	padding: 50% 0 50% 0;
+	padding: 33% 0 0 0;
 	color: white;
 	text-align: center;
 	font-size: 25px;
@@ -211,7 +211,8 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 }
 
 .loginBox > div:last-child a {
-	margin-top: 3px;
+	width: max-content;
+	margin: 2px auto;
 }
 
 .loginBox input[type="text"], .loginBox input[type="password"], .loginBox input[type="email"] {
@@ -254,7 +255,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 /* registrar */
 
 .regBox {
-	padding-bottom: 110px;
+	padding-bottom: 5px;
 }
 
 /* Alterar senha */
@@ -690,7 +691,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 }
 .rectMain > div:last-child {
 	margin-top: 15px;
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 }
 
 .rectMain > div:last-child > div {

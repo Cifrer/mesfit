@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/default.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/223af74c50.js" crossorigin="anonymous"></script>
+  <title>Registrar</title>
+</head>
+<body>
+  <nav class="menu">
+    <input type="checkbox" id="toggle" />
+    <label id="show-menu" for="toggle">
+      <div class="btn">
+        <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
+        <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+      </div>
+    </label>
+    <div class="menuBtns">
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>Receitas</a></li>
+        <li><a>Login</a></li>
+        <li><a>Registrar-se</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main class="loginSec">
+    <div>
+      <span>Entra como <a href="">Visitante</a></span>
+      <figure>
+        <img src="images/icon-usu.png">
+      </figure>
+      <span>Registrar-se</span>
+    </div>
+    <form action="" class="loginBox regBox">
+      <div>
+        <label for="name">Nome completo</label>
+        <input type="text" id="name" required>
+        <hr class="line">
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required>
+        <hr class="line">
+      </div>
+      <div>
+        <label for="user">Usuário</label>
+        <input type="text" id="user" required>
+        <hr class="line">
+      </div>
+      <div>
+        <label for="password">Senha</label>
+        <input type="password" id="password" required>
+        <hr class="line">
+      </div>
+      <div>
+        <label for="passwordConf">Confirmar senha</label>
+        <input type="password" id="passwordConf" required>
+        <hr class="line">
+      </div>
+      <div>
+        <input type="submit" value="Registrar">
+        <span>Já possui uma conta?</span><br>
+        <a href="login.html">Login</a>
+      </div>
+    </form>
+  </main>
+  <script src="scripts/index.js"></script>
+</body>
+</html>

@@ -13,8 +13,15 @@ class WebController
   public function home(): void
   {
     try {
+      $PublicacaoDao = new PublicacaoDao();
+      $PratoDao = new PratoDao();
+      $data = array(
+        "publicacaoDao" => $PublicacaoDao->read(),
+        "pratoDao" => $PratoDao->read()
+      );
+      
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('home');
+      $ToView->viewStandard('home', $data);
     } catch (\Exception $exception) {
     }
   }

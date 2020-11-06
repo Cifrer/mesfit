@@ -5,6 +5,7 @@ namespace Src\App;
 use Src\Views\ToView;
 use Src\Models\Dao\PublicacaoDao;
 use Src\Models\Dao\PratoDao;
+use Src\Models\Dao\UsuarioDao;
 
 class WebController
 {
@@ -106,8 +107,10 @@ class WebController
   public function usuario(): void
   {
     try {
+      $UsuarioDao = new UsuarioDao();
+      $data = $UsuarioDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('usuario');
+      $ToView->viewStandard('usuario', $data);
     } catch (\Exception $exception) {
     }
   }

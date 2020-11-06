@@ -44,6 +44,9 @@
       <span>Mesfit</span>
     </div>
     <div>
+    <?php 
+        foreach($data as $key => $value){
+          ?>
       <figure>
         <img src="<?= url("templates/global/images/profile.png"); ?>">
       </figure>
@@ -148,6 +151,9 @@
                 <span><b>Usuario</b></span>
               </a>
             </li>
+            <?php 
+              } 
+            ?>
           </ul>
         </div>
       </div>

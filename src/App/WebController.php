@@ -4,6 +4,7 @@ namespace Src\App;
 
 use Src\Views\ToView;
 use Src\Models\Dao\PublicacaoDao;
+use Src\Models\Dao\PratoDao;
 
 class WebController
 {

@@ -121,7 +121,7 @@
         </li>
       </ul>
       <div class="homeDivis">
-        <span>RECEITAS</span>
+        <span><a href="receitas">RECEITAS</a></span>
       </div>
 
       <div class="homeTitles">

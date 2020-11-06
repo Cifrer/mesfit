@@ -62,12 +62,12 @@
           <input type="checkbox" name="favorite1" id="favorite1" class="favCheck" style="display:none;">
           <label for="favorite1" class="favRect"><i class="far fa-bookmark"></i></label>
           <figure>
-            <img src="<?= url("templates/global/images/receita.jpg"); ?>">
+            <img src="<?php echo "$value[ImgPrato]" ?>">
           </figure>
           <div>
-            <h2><?php echo "$value[nomePrato]" ?></h2>
+            <h2><a href = "<?php echo "$value[LinkPrato]" ?>"><?php echo "$value[nomePrato]" ?></a></h2>
             <p>
-              Ótima opção pra fazer rapidinho no café da manhã antes de desmaiar de fome hahaha. Eu vou fazendo e comendo ao mesmo tempo. Só são necessários cinco ingredientes simples pra fazer essa maravilha: aveia (em flocos ou farinha), farinha de linhaça, água, melado e fermento. Não leva açúcar e nem gordura, ponto positivo!
+            <?php echo "$value[descPrato]" ?>
             </p>
           </div>
         </li>

@@ -94,8 +94,10 @@ class WebController
   public function receitas(): void
   {
     try {
+      $PratoDao = new PratoDao();
+      $data = $PratoDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('receitas');
+      $ToView->viewStandard('receitas', $data);
     } catch (\Exception $exception) {
     }
   }

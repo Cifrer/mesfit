@@ -10,14 +10,16 @@ class PublicacaoDao
     public function create(Publicacao $p)
     {
 
-        $sql = 'INSERT INTO publicacao (tituloPub, rankPub, descPub, dtHrPub, codStatusPub) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO publicacao (tituloPub, rankPub, descPub, dtHrPub, ImgPub, LinkPub, codStatusPub) VALUES (?,?,?,?,?,?,?)';
 
         $cadastrar = Conexao::getConn()->prepare($sql);
         $cadastrar->bindValue(1, $p->getTituloPub());
         $cadastrar->bindValue(2, $p->getRankPub());
         $cadastrar->bindValue(3, $p->getDescPub());
         $cadastrar->bindValue(4, $p->getDtHrPub());
-        $cadastrar->bindValue(5, $p->getCodStatusPub());
+        $cadastrar->bindValue(5, $p->getImgPub());
+        $cadastrar->bindValue(6, $p->getLinkPub());
+        $cadastrar->bindValue(7, $p->getCodStatusPub());
 
         $cadastrar->execute();
     }

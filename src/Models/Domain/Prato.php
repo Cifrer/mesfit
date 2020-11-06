@@ -4,7 +4,7 @@ namespace Src\Models\Domain;
 
 class Prato {
 
-    private $idPrato, $nomePrato, $precoPrato, $rankPrato, $descPrato, $horario;
+    private $idPrato, $nomePrato, $rankPrato, $descPrato, $horario, $ImgPrato, $LinkPrato ;
 
     public function getIdPrato(){
         return $this->idPrato;
@@ -20,14 +20,6 @@ class Prato {
 
     public function setNomePrato($nomePrato){
         $this->nomePrato = $nomePrato;
-    }
-
-    public function getPrecoPrato(){
-        return $this->precoPrato;
-    }
-
-    public function setPrecoPrato($precoPrato){
-        $this->precoPrato = $precoPrato;
     }
 
     public function getRankPrato(){
@@ -52,5 +44,21 @@ class Prato {
 
     public function setHorario($horario){
         $this->horario = $horario;
+    }
+
+    public function getImgPrato(){
+        return $this->ImgPrato;
+    }
+
+    public function setImgPrato($ImgPrato){
+        $this->ImgPrato = $ImgPrato;
+    }
+
+    public function getLinkPrato(){
+        return $this->LinkPrato;
+    }
+
+    public function setLinkPrato($LinkPrato){
+        $this->LinkPrato = $LinkPrato;
     }
 }

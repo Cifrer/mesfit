@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat</title>
-  <link rel="stylesheet"  href="<?= url("templates/global/default.css") ?>" />
+  <link rel="stylesheet"  href="<?= url("templates/global/css/default.css") ?>" />
 
   <script src="https://kit.fontawesome.com/223af74c50.js" crossorigin="anonymous"></script>
 

@@ -18,6 +18,8 @@ class Auth
 			$usuarioDao = new UsuarioDao();
 			$result = $usuarioDao->login($usuario);
 
+			var_dump($result);
+
 			if (count($result) > 0) {
 				if ($result[0]['codStatusUsu'] == 'A') {
 					$_SESSION['celUsu'] = $result[0]['celUsu'];
@@ -26,6 +28,7 @@ class Auth
 					$_SESSION['emailUsu'] = $result[0]['emailUsu'];
 					$_SESSION['idTipo'] = $result[0]['idTipo'];
 					$_SESSION['nomeUsu'] = $result[0]['nomeUsu'];
+					$_SESSION['idUsu'] = $result[0]['idUsu'];
 					$_SESSION['senhaUsu'] = $result[0]['senhaUsu'];
 
 					switch ($result[0]['idTipo']) {
@@ -50,6 +53,7 @@ class Auth
 				}
 			} else {
 				echo var_dump($result);
+				var_dump($result);
 			}
 		} catch (\Exception $exception) {
 			throw $exception;
@@ -86,6 +90,38 @@ class Auth
 				echo "</script>";
 			} else {
 				echo "não foi possível realizar o cadastro!";
+				var_dump($data);
+			}
+		} catch (\Exception $exception) {
+			throw $exception;
+		}
+	}
+	
+	public function updateRegister($data): void
+	var_dump('1234567');
+	{
+		try {
+			$data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+			$Usuario = new Usuario();
+			$Usuario->setNomeUsu($data['name']);
+			$Usuario->setIdUsu($data['idUsu']);
+			$Usuario->setPesoUsu($data['peso']);
+			$Usuario->setIdadeUsu($data['idade']);
+			$Usuario->setIMCUsu($data['imc']);
+			$Usuario->setAlturaUsu($data['altura']);
+			$Usuario->setObsUsu($data['obs']);
+			$Usuario->setEmailUsu($data['email']);
+			$Usuario->setSenhaUsu($data['password']);
+			$Usuario->setIdTipo('CLI');
+			$Usuario->setCodStatusUsu('A');
+			$UsuarioDao = new UsuarioDao();
+
+			if ($UsuarioDao->update($Usuario)) {
+				echo "<script>";
+				echo "location.href='" . url("perfil") . "'";
+				echo "</script>";
+			} else {
+				echo "não foi possível atualizar!";
 				var_dump($data);
 			}
 		} catch (\Exception $exception) {

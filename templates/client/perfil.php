@@ -58,9 +58,12 @@
       </div>
     </div>
     <input type="checkbox" name="editCheck" id="editCheck">
-    <div class="editPerf">
+    <div class="editPerf aboutPerf">
       <a id="showEdit">X</a>
-      <form>
+      <?php 
+        #foreach($data as $key => $value){
+          ?>
+      <form action="<?= url("authentication/updateRegister"); ?>" method="post">
         <div>
           <div>
             <figure>
@@ -70,8 +73,46 @@
           </div>
           <div>
             <input type="text" name="name" id="name" placeholder="Nome do usuário" value="<?= $_SESSION['nomeUsu'] ?>">
+            <input type="hidden" name="iduser" id="iduser" value="<?= $_SESSION['idUsu'] ?>">
             <input type="text" name="especializacao" id="especializacao" placeholder="Especialização">
           </div>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <span>Peso</span>
+              <small>
+              <input type="text" name="peso" id="peso" placeholder="00,0 Kg" value="<?= $data['PesoUsu'] ?>">
+              Kg</small>
+            </li>
+
+            <li>
+              <span>Idade</span>
+              <small>
+              <input type="text" name="Idade" id="Idade" placeholder="0 Anos" value="<?= $data['IdadeUsu'] ?>">
+              Anos</small>
+            </li>
+
+            <li>
+              <span>IMC</span>
+              <small>
+              <input type="text" name="IMC" id="IMC" placeholder="00,0 Kg/m²" value="<?= $data['IMCUsu'] ?>">
+              Kg/m²</small>
+            </li>
+
+            <li>
+              <span>Altura</span>
+              <small>
+              <input type="text" name="Altura" id="Altura" placeholder="0 M" value="<?= $data['AlturaUsu'] ?>">
+              M</small>
+            </li>
+
+            <li>
+              <span>Observações</span>
+              <small>
+              <input type="text" name="observações" id="observações" placeholder="---" value="<?= $data['ObsUsu'] ?>">
+            </li>
+          </ul>
         </div>
         <div>
           <label for="formacao">Formação</label>
@@ -79,7 +120,11 @@
           <label for="certificado">Certificado</label>
           <input type="file" name="certificado" id="certificado">
         </div>
+        <input type="submit" value="Salvar">
       </form>
+      <?php 
+        #}
+          ?>
     </div>
 
     <div class="tab-wrapper">

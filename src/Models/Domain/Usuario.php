@@ -7,6 +7,11 @@ class Usuario
     private $celUsu;
     private $codStatusUsu;
     private $cpfUsu;
+    private $PesoUsu;
+    private $IdadeUsu;
+    private $IMCUsu;
+    private $AlturaUsu;
+    private $ObsUsu;
     private $emailUsu;
     private $idTipo;
     private $idUsu;
@@ -41,6 +46,56 @@ class Usuario
     public function setCpfUsu($cpfUsu)
     {
         $this->cpfUsu = $cpfUsu;
+    }
+
+    public function getPesoUsu()
+    {
+        return $this->PesoUsu;
+    }
+
+    public function setPesoUsu($PesoUsu)
+    {
+        $this->PesoUsu = $PesoUsu;
+    }
+
+    public function getIdadeUsu()
+    {
+        return $this->IdadeUsu;
+    }
+
+    public function setIdadeUsu($IdadeUsu)
+    {
+        $this->IdadeUsu = $IdadeUsu;
+    }
+
+    public function getIMCUsu()
+    {
+        return $this->IMCUsu;
+    }
+
+    public function setIMCUsu($IMCUsu)
+    {
+        $this->IMCUsu = $IMCUsu;
+    }
+
+    public function getAlturaUsu()
+    {
+        return $this->AlturaUsu;
+    }
+
+    public function setAlturaUsu($AlturaUsu)
+    {
+        $this->AlturaUsu = $AlturaUsu;
+    }
+
+    public function getObsUsu()
+    {
+        return $this->ObsUsu;
+    }
+
+    public function setObsUsu($ObsUsu)
+    {
+        $this->ObsUsu = $ObsUsu;
     }
 
     public function getEmailUsu()

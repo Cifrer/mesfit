@@ -3,6 +3,9 @@
 namespace Src\App;
 
 use Src\Views\ToView;
+use Src\Models\Dao\PublicacaoDao;
+use Src\Models\Dao\PratoDao;
+use Src\Models\Dao\UsuarioDao;
 
 class WebController
 {
@@ -10,8 +13,15 @@ class WebController
   public function home(): void
   {
     try {
+      $PublicacaoDao = new PublicacaoDao();
+      $PratoDao = new PratoDao();
+      $data = array(
+        "publicacaoDao" => $PublicacaoDao->read(),
+        "pratoDao" => $PratoDao->read()
+      );
+      
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('home');
+      $ToView->viewStandard('home', $data);
     } catch (\Exception $exception) {
     }
   }
@@ -73,8 +83,10 @@ class WebController
   public function noticias(): void
   {
     try {
+      $PublicacaoDao = new PublicacaoDao();
+      $data = $PublicacaoDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('noticias');
+      $ToView->viewStandard('noticias', $data);
     } catch (\Exception $exception) {
     }
   }
@@ -91,8 +103,10 @@ class WebController
   public function receitas(): void
   {
     try {
+      $PratoDao = new PratoDao();
+      $data = $PratoDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('receitas');
+      $ToView->viewStandard('receitas', $data);
     } catch (\Exception $exception) {
     }
   }
@@ -100,8 +114,10 @@ class WebController
   public function usuario(): void
   {
     try {
+      $UsuarioDao = new UsuarioDao();
+      $data = $UsuarioDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('usuario');
+      $ToView->viewStandard('usuario', $data);
     } catch (\Exception $exception) {
     }
   }

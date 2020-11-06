@@ -46,6 +46,9 @@
 
     <div>
       <ul>
+      <?php 
+        foreach($data as $key => $value){
+          ?>
         <li>
           <div>
             <figure>
@@ -53,67 +56,24 @@
             </figure>
             <div>
               <span>Usuário</span>
-              <small>1 Hora atrás</small>
+              <small><?php echo "$value[horario]" ?></small>
             </div>
           </div>
           <input type="checkbox" name="favorite1" id="favorite1" class="favCheck" style="display:none;">
           <label for="favorite1" class="favRect"><i class="far fa-bookmark"></i></label>
           <figure>
-            <img src="<?= url("templates/global/images/receita.jpg"); ?>">
+            <img src="<?php echo "$value[ImgPrato]" ?>">
           </figure>
           <div>
-            <h2>Titulo da receita</h2>
+            <h2><a href = "<?php echo "$value[LinkPrato]" ?>"><?php echo "$value[nomePrato]" ?></a></h2>
             <p>
-              Ótima opção pra fazer rapidinho no café da manhã antes de desmaiar de fome hahaha. Eu vou fazendo e comendo ao mesmo tempo. Só são necessários cinco ingredientes simples pra fazer essa maravilha: aveia (em flocos ou farinha), farinha de linhaça, água, melado e fermento. Não leva açúcar e nem gordura, ponto positivo!
+            <?php echo "$value[descPrato]" ?>
             </p>
           </div>
         </li>
-
-        <li>
-          <div>
-            <figure>
-              <img src="<?= url("templates/global/images/profile.png"); ?>">
-            </figure>
-            <div>
-              <span>Usuário</span>
-              <small>1 Hora atrás</small>
-            </div>
-          </div>
-          <input type="checkbox" name="favorite2" id="favorite2" class="favCheck" style="display:none;">
-          <label for="favorite2" class="favRect"><i class="far fa-bookmark"></i></label>
-          <figure>
-            <img src="<?= url("templates/global/images/receita.jpg"); ?>">
-          </figure>
-          <div>
-            <h2>Titulo da receita</h2>
-            <p>
-              Ótima opção pra fazer rapidinho no café da manhã antes de desmaiar de fome hahaha. Eu vou fazendo e comendo ao mesmo tempo. Só são necessários cinco ingredientes simples pra fazer essa maravilha: aveia (em flocos ou farinha), farinha de linhaça, água, melado e fermento. Não leva açúcar e nem gordura, ponto positivo!
-            </p>
-          </div>
-        </li>
-
-        <li>
-          <div>
-            <figure>
-              <img src="<?= url("templates/global/images/profile.png"); ?>">
-            </figure>
-            <div>
-              <span>Usuário</span>
-              <small>1 Hora atrás</small>
-            </div>
-          </div>
-          <input type="checkbox" name="favorite3" id="favorite3" class="favCheck" style="display:none;">
-          <label for="favorite3" class="favRect"><i class="far fa-bookmark"></i></label>
-          <figure>
-            <img src="<?= url("templates/global/images/receita.jpg"); ?>">
-          </figure>
-          <div>
-            <h2>Titulo da receita</h2>
-            <p>
-              Ótima opção pra fazer rapidinho no café da manhã antes de desmaiar de fome hahaha. Eu vou fazendo e comendo ao mesmo tempo. Só são necessários cinco ingredientes simples pra fazer essa maravilha: aveia (em flocos ou farinha), farinha de linhaça, água, melado e fermento. Não leva açúcar e nem gordura, ponto positivo!
-            </p>
-          </div>
-        </li>
+        <?php 
+          }
+          ?>
       </ul>
     </div>
 

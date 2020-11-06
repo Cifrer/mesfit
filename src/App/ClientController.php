@@ -3,6 +3,7 @@
 namespace Src\App;
 
 use Src\Views\ToView;
+use Src\Models\Dao\UsuarioDao;
 
 class ClientController
 {
@@ -41,8 +42,11 @@ class ClientController
   public function perfil(): void
   {
     try {
+      $UsuarioDao = new UsuarioDao();
+      $IdUsu = $_SESSION['idUsu'];
+      $data = $UsuarioDao->read();
       $ToView = new Toview(URL_VIEW_CLIENT);
-      $ToView->viewStandard('perfil');
+      $ToView->viewStandard('perfil', $data);
     } catch (\Exception $exception){
 
     }

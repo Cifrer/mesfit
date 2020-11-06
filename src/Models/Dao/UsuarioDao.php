@@ -94,6 +94,15 @@ class UsuarioDao
 
     public function update(Usuario $usuario)
     {
+        try {
+            $sql = "UPDATE Usuario SET nomeUsu = ? WHERE idUsu = ?";
+            $stmt = Conexao::getConn()->prepare($sql);
+            $stmt->bindValue(1, $usuario->getNomeUsu());
+            $stmt->bindValue(2, $usuario->getIdUsu());
+            return $stmt->execute();
+        } catch (\PDOException $exception) {
+            throw $exception;
+        }
     }
 
     public function delete($codUsuario)

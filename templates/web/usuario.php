@@ -104,6 +104,7 @@
 
     <div class="tab-wrapper">
       <div class="tab">
+
         <input type="radio" name="tab" id="tab1" checked>
         <label for="tab1" style="padding: 25px;"><i class="far fa-bookmark"></i> Favoritos</label>
         <div class="tab-content">

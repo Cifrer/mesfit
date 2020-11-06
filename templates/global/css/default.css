@@ -563,7 +563,8 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 	position: fixed;
 	top: 10px;
 	left: 10px;
-	height: 48vh;
+	height: 80vh;
+	overflow: auto;
 	width: 95vw;
 	padding: 10px;
 	z-index: -2;
@@ -608,7 +609,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 }
 
 .editPerf input {
-	margin: 0 20px 20px;
+	margin: 0 10px 20px;
 	padding-right: 30px;
 	border: 0;
 	background-color: transparent;

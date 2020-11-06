@@ -3,6 +3,7 @@
 namespace Src\App;
 
 use Src\Views\ToView;
+use Src\Models\Dao\PublicacaoDao;
 
 class WebController
 {
@@ -73,8 +74,10 @@ class WebController
   public function noticias(): void
   {
     try {
+      $PublicacaoDao = new PublicacaoDao();
+      $data = $PublicacaoDao->read();
       $ToView = new ToView(URL_VIEW_WEB);
-      $ToView->viewStandard('noticias');
+      $ToView->viewStandard('noticias', $data);
     } catch (\Exception $exception) {
     }
   }

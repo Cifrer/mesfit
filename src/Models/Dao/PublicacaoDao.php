@@ -28,7 +28,7 @@ class PublicacaoDao
             $sql = 'SELECT * FROM publicacao';
             $listar = Conexao::getConn()->prepare($sql);
             $listar->execute();
-
+        
             if ($listar->rowCount() > 0) {
                 $result = $listar->fetchAll(\PDO::FETCH_ASSOC);
                 return $result;
@@ -37,7 +37,9 @@ class PublicacaoDao
             }
         } catch (\PDOException $exception) {
             throw $exception;{
+            }
         }
+        
     }
 
     public function update(Publicacao $p)
@@ -48,3 +50,4 @@ class PublicacaoDao
     {
     }
 }
+

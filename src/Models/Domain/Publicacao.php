@@ -4,11 +4,11 @@ namespace Src\Models\Domain;
 
 class Publicacao
 {
-    private $idPub, $idUsu, $tituloPub, $rankPub, $descPub, $dtHrPub, $codStatusPub;
+    #private $idPub, $idUsu, $tituloPub, $rankPub, $descPub, $dtHrPub, $codStatusPub;
 
-    public function getIdPub()
+    public function getPub()
     {
-        return $this->idPub;
+        return PublicacaoDao::read();
     }
 
     public function setIdPub($idPub)
@@ -16,7 +16,7 @@ class Publicacao
         $this->idPub = $idPub;
     }
 
-    public function getIdUsu()
+    public function getUsu()
     {
         return $this->idUsu;
     }
